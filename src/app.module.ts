@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { RecipeRepositoryDynamoDB } from './infra/aws/database/recipe.repository';
+import { RecipeController } from './recipe.controller';
+import { RecipeService } from './recipe.service';
 
 @Module({
   imports: [],
-  controllers: [AppController],
-  providers: [AppService, RecipeRepositoryDynamoDB],
+  controllers: [RecipeController],
+  providers: [RecipeService, RecipeRepositoryDynamoDB],
 })
 export class AppModule { }
